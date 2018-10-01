@@ -34,7 +34,7 @@
             <a class="nav-link" href="#">Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={% url 'all_blogs' %}>Blog</a>
+            <a class="nav-link active" href={% url 'all_blogs' %}>Blog</a>
           </li>
         </ul>
       </div>
@@ -42,38 +42,25 @@
   </header>
 
   <main role="main">
+    <div class="container">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Hi I'm Parag Raut</h1>
-        <p class="lead text-muted">Something about me</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Contact</a>
-          <a href="#" class="btn btn-secondary my-2">About</a>
-        </p>
-      </div>
-    </section>
+      <h1 class="text-center pt-3">Welcome to My Blog</h1>
+      <br/>
+      <br/>
+      <h2>Latest Posts</h2>
+      <br/>
+      {% for blog in Blogs %}
+      <ul>
+        <li> {{ blog.title }} </li>
+        <li> {{ blog.pub_date }} </li>
+        <li> {{ blog.body }} </li>
+        <img class="card-img-top" src= {{ blog.image.url }} >
+      </ul>
 
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row">
+      {% endfor %}
 
-          {% for job in  Jobs %}
 
-          <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <img class="card-img-top" src= {{ job.image.url }}>
-              <div class="card-body">
-                <p class="card-text">{{ job.summary }}</p>
-              </div>
-            </div>
-          </div>
-
-          {% endfor %}
-        </div>
-      </div>
     </div>
-
   </main>
 
   <footer class="text-muted">
