@@ -5,6 +5,6 @@ from .models import Job
 # Create your views here.
 
 def home_page(request):
-    Jobs = Job.objects
+    Jobs = Job.objects.all()
     context = {'Jobs':Jobs}
     return render(request, 'jobs/home_page.html', context)
