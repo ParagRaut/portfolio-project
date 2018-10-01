@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+  {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../../../favicon.ico">
+  <link rel="icon" href="{% static 'favicon.ico' %}">
 
-  <title>Album example for Bootstrap</title>
+  <title>Parag Raut</title>
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -21,7 +22,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href={% url 'home_page' %}>Parag Raut</a>
+      <a class="navbar-brand" href={% url 'home-page' %}>Parag Raut</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,10 +32,10 @@
             <a class="nav-link" href="https://twitter.com/dersieg">Twitter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link" href= {% static 'Resume_ParagRaut.pdf' %} >Resume</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={% url 'all_blogs' %}>Blog</a>
+            <a class="nav-link" href={% url 'all-blogs' %}>Blog</a>
           </li>
         </ul>
       </div>
@@ -51,6 +52,7 @@
           <a href="#" class="btn btn-primary my-2">Contact</a>
           <a href="#" class="btn btn-secondary my-2">About</a>
         </p>
+        <img class="img-fluid" src="{% static 'ParagRaut.jpg' %}" alt="">
       </div>
     </section>
 

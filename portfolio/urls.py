@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from jobs.views import home_page
 
 urlpatterns = [
-    path('', home_page, name='home_page'),
+    path('', home_page, name='home-page'),
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
