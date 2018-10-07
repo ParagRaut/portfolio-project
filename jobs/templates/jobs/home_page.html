@@ -43,25 +43,22 @@
   </header>
 
   <main role="main">
-
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">Hi I'm Parag Raut</h1>
         <p class="lead text-muted">Something about me</p>
         <p>
           <a href="#" class="btn btn-primary my-2">Contact</a>
-          <a href="#" class="btn btn-secondary my-2">About</a>
+          <!-- <a href="#" class="btn btn-secondary my-2">About</a> -->
         </p>
-        <img class="img-fluid" src="{% static 'ParagRaut.jpg' %}" alt="">
+        <img class="img-fluid" src="{% static 'ParagRaut.jpg' %}" alt="" height=800 width=600>
       </div>
     </section>
 
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row">
-
           {% for job in  Jobs %}
-
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <img class="card-img-top" src= {{ job.image.url }}>
@@ -70,12 +67,10 @@
               </div>
             </div>
           </div>
-
           {% endfor %}
         </div>
       </div>
     </div>
-
   </main>
 
   <footer class="text-muted">
