@@ -1,46 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-  {% load staticfiles %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="{% static 'favicon.ico' %}">
+{% extends "base.html" %}
+{% load staticfiles %}
 
-  <title>Parag Raut</title>
-
-  <!-- Bootstrap core CSS -->
-  <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <!-- Custom styles for this template -->
-  <link href="album.css" rel="stylesheet">
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href={% url 'home-page' %}>Parag Raut</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/dersieg">Twitter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href= {% static 'Resume_ParagRaut.pdf' %} >Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href={% url 'all-blogs' %}>Blog</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
+{% block content %}
+<title>{% block head_title %}{{ block.super }}{% endblock head_title %}</title>
   <main role="main">
     <section class="jumbotron text-center">
       <div class="container">
@@ -53,8 +15,8 @@
         <img class="img-fluid" src="{% static 'ParagRaut.jpg' %}" alt="" height=800 width=600>
       </div>
     </section>
-
     </div>
+
     <div class="album py-5 bg-light">
       <h4 class="text-center">Assignments</h4>
       <br/>
@@ -74,22 +36,4 @@
       </div>
     </div>
   </main>
-
-  <footer class="footer text-muted">
-    <div class="container pt-2">
-      <p class="float-right">
-        <a href="#">🔝</a>
-      </p>
-      <p>© Parag Raut {% now "Y" %}</p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-</body>
-</html>
+{% endblock content %}
