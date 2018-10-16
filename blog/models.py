@@ -18,7 +18,10 @@ class Blog(models.Model):
         pass
 
     def summary(self):
-        return self.body[:150] + "..."
+        if(len(self.body) > 150):
+            return self.body[:150] + "..."
+        else:
+            return self.body[:150]
 
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')
